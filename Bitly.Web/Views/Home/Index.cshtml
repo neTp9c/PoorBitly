@@ -1,1 +1,25 @@
-﻿Hello from View!
+﻿@{
+    ViewBag.Title = "Homepage";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form id="form-link">
+                <div class="form-group">
+                    <label class="sr-only" for="link">Paste a link to shorten it</label>
+                    <input type="text" class="form-control" id="link" name="link" placeholder="Paste a link to shorten it">
+                </div>
+                <button type="submit" class="btn btn-default">Shorten</button>
+            </form>
+            <div class="panel panel-default">
+                <div class="panel-body">Some info about feature link 1</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">Some info about feature link 2</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">Some info about feature link 3</div>
+            </div>
+        </div>
+    </div>
+</div>
