@@ -11,7 +11,7 @@ namespace Bitly.Data
             
         }
 
-        public DbSet<Link> Links { get; set; }
+        public virtual IDbSet<Link> Links { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

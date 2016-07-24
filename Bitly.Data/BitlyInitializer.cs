@@ -38,7 +38,7 @@ namespace Bitly.Data
                     CreatedUtc = DateTime.Parse("2014-01-02T23:33:50Z")
                 }
             };
-            context.Links.AddRange(links);
+            links.ForEach(link => context.Links.Add(link));
             context.SaveChanges();
 
             base.Seed(context);
