@@ -1,8 +1,12 @@
-﻿@{
+﻿@model System.Collections.Generic.IEnumerable<Bitly.Entities.Link>
+@{
     ViewBag.Title = "Homepage";
 }
 <div class="container">
     <div class="row">
+        <div class="col-xs-12">
+            Total count of links: @Model.Count()
+        </div>
         <div class="col-xs-12">
             <form id="form-link">
                 <div class="form-group">
