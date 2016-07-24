@@ -8,7 +8,7 @@ namespace Bitly.Entities
 {
     public class Link
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string ShortenPath { get; set; }
         public string OriginalUrl { get; set; }
         public DateTime CreatedUtc { get; set; }
