@@ -17,5 +17,15 @@ namespace Bitly.Data
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+
+        
+        private void FixEfProviderServicesProblem()
+        {
+            // EntityFramework.SqlServer.dll will not automatically copy on project building to web project bin folder without it.
+            // http://stackoverflow.com/a/19130718/1315751
+
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+        }
     }
 }
