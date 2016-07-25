@@ -12,7 +12,19 @@ namespace Bitly.Web.App_Start
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Home",
+                url: "",
+                defaults: new { controller = "Home", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "ShortLink",
+                url: "{shortPath}",
+                defaults: new { controller = "Redirect", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

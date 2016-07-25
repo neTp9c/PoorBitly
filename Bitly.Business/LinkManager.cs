@@ -13,6 +13,8 @@ namespace Bitly.Business
         Link GetByOriginalUrl(string originalUrl);
         IEnumerable<Link> GetLinks(IEnumerable<long> linkIds);
         void Create(Link link);
+
+        Link GetWithVisitIncremention(string shortPath);
     }
 
     public class LinkManager : ILinkManager
@@ -61,6 +63,22 @@ namespace Bitly.Business
             // may be should move this step that generated short path to the database
             link.ShortenPath = _shortenPathConverter.IdToPath(link.Id);
             _bitlyContext.SaveChanges();
+        }
+
+
+
+        public Link GetWithVisitIncremention(string shortPath)
+        {
+            // there should be an optimized version with one query
+            var link = GetByShortenPath(shortPath);
+
+            if (link != null)
+            {
+                link.VisitCount++;
+                _bitlyContext.SaveChanges();
+            }
+
+            return link;
         }
     }
 }
