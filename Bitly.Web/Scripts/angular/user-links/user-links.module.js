@@ -1,1 +1,1 @@
-﻿angular.module('userLinks', []);
+﻿angular.module('userLinks', ['core.shortLnks']);

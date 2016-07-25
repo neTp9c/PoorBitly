@@ -141,6 +141,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
@@ -154,10 +155,15 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Compile Include="Controllers\LinksController.cs" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular\add-link\add-link.component.js" />
     <Content Include="Scripts\angular\add-link\add-link.module.js" />
     <Content Include="Scripts\angular\add-link\add-link.template.html" />
     <Content Include="Scripts\angular\app.module.js" />
+    <Content Include="Scripts\angular\app.service.js" />
     <Content Include="Scripts\angular\user-links\user-links.controller.js" />
     <Content Include="Scripts\angular\user-links\user-links.module.js" />
     <Content Include="Scripts\bootstrap.js" />

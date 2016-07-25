@@ -1,1 +1,1 @@
-﻿angular.module('addLink', []);
+﻿angular.module('addLink', ['core.shortLnks']);

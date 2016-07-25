@@ -1,4 +1,5 @@
 ﻿window.bitlyApp = angular.module('bitlyApp', [
   'addLink',
-  'userLinks'
+  'userLinks',
+  'ui.bootstrap'
 ]);

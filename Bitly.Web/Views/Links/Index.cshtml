@@ -3,6 +3,16 @@
 <div class="container" ng-app="bitlyApp" ng-controller="UserLinksController">
     <div class="row">
         <div class="col-xs-12">
+            <ul uib-pagination boundary-links="true"
+                total-items="totalItems"
+                ng-model="currentPage"
+                items-per-page="itemsPerPage"
+                ng-change="pageChanged()"
+                class="pagination-sm"
+                previous-text="&lsaquo;"
+                next-text="&rsaquo;"
+                first-text="&laquo;"
+                last-text="&raquo;"></ul>
             <div ng-repeat="link in links" class="panel panel-default">
                 <div class="panel-body">
                     Short Url: <a href="{{link.ShortUrl}}" target="_blank">{{link.ShortUrl}}</a>

@@ -21,7 +21,10 @@ namespace Bitly.Web.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                "~/scripts/angular.js",
+               "~/scripts/angular-ui/ui-bootstrap.js",
+               "~/scripts/angular-ui/ui-bootstrap-tpls.js",
                "~/scripts/angular/app.module.js",
+               "~/scripts/angular/app.service.js",
                "~/scripts/angular/add-link/add-link.module.js",
                "~/scripts/angular/add-link/add-link.component.js",
                "~/scripts/angular/user-links/user-links.module.js",

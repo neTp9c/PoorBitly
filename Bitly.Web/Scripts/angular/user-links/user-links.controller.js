@@ -1,26 +1,24 @@
 ﻿angular
     .module('userLinks')
     .controller('UserLinksController',
-        ['$scope', '$http', function ($scope, $http) {
-            
-            var storagedIds = localStorage.getItem("linkIds");
-            var ids = storagedIds != null ? JSON.parse(storagedIds) : [];
+        ['$scope', '$http', 'shortLnks', function ($scope, $http, shortLnks) {
 
-            $scope.loadUserLinks = function (count) {
-                var idsSegment = ids.slice(0, count).join('-');
-                if (!idsSegment) {
-                    return;
-                }
-                var loadUrl = '/api/links/list/' + idsSegment;
+            var ids = shortLnks.getUserLinkIds();
 
-                $http
-                    .get(loadUrl)
-                    .then(function (response) {
-                        $scope.links = response.data.reverse();
-                    });
+            $scope.totalItems = ids.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = 8;
+
+            $scope.loadUserLinks = function (skip, take) {
+                var loadIds = ids.slice(skip, skip + take);
+                shortLnks.loadLinks(loadIds, function (data) {
+                    $scope.links = data;
+                });
             };
 
-            $scope.loadUserLinks(20);
-
+            $scope.pageChanged = function () {
+                $scope.loadUserLinks(($scope.currentPage - 1) * $scope.itemsPerPage, $scope.itemsPerPage);
+            };
+            $scope.pageChanged();
         }
     ]);

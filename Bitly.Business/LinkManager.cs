@@ -44,7 +44,7 @@ namespace Bitly.Business
         public Link GetByOriginalUrl(string originalUrl)
         {
             var standardizedOriginalUrl = _originalUrlStandardizer.Standardize(originalUrl);
-            return _bitlyContext.Links.First(l => l.OriginalUrl == standardizedOriginalUrl);
+            return _bitlyContext.Links.FirstOrDefault(l => l.OriginalUrl == standardizedOriginalUrl);
         }
 
         public IEnumerable<Link> GetLinks(IEnumerable<long> linkIds)
