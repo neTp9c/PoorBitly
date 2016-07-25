@@ -2,11 +2,10 @@
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using Bitly.Business;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Bitly.Entities;
+using Bitly.Web.Services;
+using Bitly.Web.ViewModels;
 using System.Reflection;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 
@@ -25,6 +24,7 @@ namespace Bitly.Web.App_Start
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
 
         private static void BuildMvc(ContainerBuilder builder)
@@ -64,6 +64,7 @@ namespace Bitly.Web.App_Start
             builder.RegisterType<ShortenPathConverter>().As<IShortenPathConverter>();
             builder.RegisterType<OriginalUrlStandardizer>().As<IOriginalUrlStandardizer>();
             builder.RegisterType<LinkManager>().As<ILinkManager>();
+            builder.RegisterType<LinkToLinkViewModelConverter>().As<IConverter<Link, LinkViewModel>>();
         }
     }
 }

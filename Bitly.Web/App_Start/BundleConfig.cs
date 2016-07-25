@@ -15,6 +15,15 @@ namespace Bitly.Web.App_Start
                "~/content/bootstrap.css",
                "~/content/bootstrap-theme.css",
                "~/content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+               "~/scripts/angular.js",
+               "~/scripts/angular/app.module.js",
+               "~/scripts/angular/add-link/add-link.module.js",
+               "~/scripts/angular/add-link/add-link.component.js"));
         }
     }
 }

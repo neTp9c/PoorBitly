@@ -153,6 +153,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\angular\add-link\add-link.component.js" />
+    <Content Include="Scripts\angular\add-link\add-link.module.js" />
+    <Content Include="Scripts\angular\add-link\add-link.template.html" />
+    <Content Include="Scripts\angular\app.module.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -176,15 +180,21 @@
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebApiRouteConfig.cs" />
+    <Compile Include="Controllers\Api\LinksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IConverter.cs" />
+    <Compile Include="Services\LinkToLinkViewModelConverter.cs" />
+    <Compile Include="ViewModels\CreateLinkViewModel.cs" />
+    <Compile Include="ViewModels\LinkViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\angular\user-links\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bitly.Business\Bitly.Business.csproj">
