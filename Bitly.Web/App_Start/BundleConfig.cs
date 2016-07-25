@@ -23,7 +23,9 @@ namespace Bitly.Web.App_Start
                "~/scripts/angular.js",
                "~/scripts/angular/app.module.js",
                "~/scripts/angular/add-link/add-link.module.js",
-               "~/scripts/angular/add-link/add-link.component.js"));
+               "~/scripts/angular/add-link/add-link.component.js",
+               "~/scripts/angular/user-links/user-links.module.js",
+               "~/scripts/angular/user-links/user-links.controller.js"));
         }
     }
 }

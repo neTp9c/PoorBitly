@@ -1,0 +1,17 @@
+﻿
+
+<div class="container" ng-app="bitlyApp" ng-controller="UserLinksController">
+    <div class="row">
+        <div class="col-xs-12">
+            <div ng-repeat="link in links" class="panel panel-default">
+                <div class="panel-body">
+                    Short Url: <a href="{{link.ShortUrl}}" target="_blank">{{link.ShortUrl}}</a>
+                    <br />
+                    Url: <a href="{{link.OriginalUrl}}" target="_blank">{{link.OriginalUrl}}</a>
+                    <br />
+                    Visit count: {{link.VisitCount}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

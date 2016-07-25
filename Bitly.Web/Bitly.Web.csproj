@@ -152,11 +152,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Compile Include="Controllers\LinksController.cs" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular\add-link\add-link.component.js" />
     <Content Include="Scripts\angular\add-link\add-link.module.js" />
     <Content Include="Scripts\angular\add-link\add-link.template.html" />
     <Content Include="Scripts\angular\app.module.js" />
+    <Content Include="Scripts\angular\user-links\user-links.controller.js" />
+    <Content Include="Scripts\angular\user-links\user-links.module.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -166,6 +169,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Links\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,7 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\angular\user-links\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bitly.Business\Bitly.Business.csproj">
